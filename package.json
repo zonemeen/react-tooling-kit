@@ -1,0 +1,84 @@
+{
+  "name": "react-file-preview",
+  "version": "0.1.0",
+  "description": "Component to render and preview some kind of files",
+  "main": "lib/index.js",
+  "private": false,
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "publish": "npm publish --access=public",
+    "build": "rm -rf ./lib && mkdir lib && npx babel src/ --out-dir lib --copy-files"
+  },
+  "keywords": [
+    "react-file-viewer",
+    "react",
+    "files",
+    "files preview",
+    "preview",
+    "files view",
+    "view",
+    "viewer",
+    "files viewer",
+    "pdf preview",
+    "docx preview"
+  ],
+  "author": "miqilin21 <miqilin18@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miqilin21/react-file-preview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miqilin21/react-file-preview/issues"
+  },
+  "homepage": "https://github.com/miqilin21/react-file-preview#readme",
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "prop-types": "15.7.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/eslint-parser": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

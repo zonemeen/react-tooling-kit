@@ -33,24 +33,25 @@
   },
   "homepage": "https://github.com/miqilin21/react-file-preview#readme",
   "peerDependencies": {
+    "prop-types": "15.7.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "prop-types": "15.7.2"
+    "react-dom": "17.0.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15"
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.5",
+    "@babel/eslint-parser": "^7.15.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.5",
     "@babel/plugin-transform-react-jsx": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
-    "@babel/eslint-parser": "^7.15.0",
     "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",

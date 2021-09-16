@@ -4,13 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: path.resolve(__dirname, './example/index.js'),
     output: {
-        path: path.resolve(__dirname, 'lib'),
-        filename: 'index.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     devServer: { port: 3000 },
-    resolve: {
-        extensions: ['.js', '.jsx'],
-    },
     module: {
         rules: [
             {
@@ -24,27 +20,27 @@ module.exports = {
             },
             {
                 test: /\.(gif|jpg|jpeg|mp3|mp4|xlsx|docx|pdf|csv)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[hash].[ext]',
-                        },
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[hash].[ext]',
                     },
-                ],
+                }],
             },
             {
-                test: /\.png$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                },
+                test: /\.scss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './example/index.html'),
+            filename: './index.html',
         }),
     ],
 }

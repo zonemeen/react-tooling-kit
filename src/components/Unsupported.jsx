@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/unsupported.scss";
+import React from 'react'
+import '../styles/unsupported.scss'
 
 const Unsupported = (props) => (
   <div className="unsupported">
@@ -11,6 +11,6 @@ const Unsupported = (props) => (
       </p>
     )}
   </div>
-);
+)
 
-export default Unsupported;
+export default Unsupported

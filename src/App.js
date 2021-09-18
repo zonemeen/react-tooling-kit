@@ -1,7 +1,7 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import docx from './samples/sample.docx'
+import docx from './samples/sample2.docx'
 
 const App = () => {
   return (

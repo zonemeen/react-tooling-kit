@@ -18,9 +18,9 @@ const Docx = (props) => {
           { includeDefaultStyleMap: true }
         )
         const opt = {
-          margin: 0.7,
+          margin: 0.8,
           image: { type: 'jpeg', quality: 1 },
-          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+          jsPDF: { unit: 'cm', format: 'letter', orientation: 'portrait' },
         }
         const res = await htmlToPdf(requestResult.value, opt)
         setUrl(res)

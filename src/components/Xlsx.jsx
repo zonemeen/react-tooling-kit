@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import mammoth from 'mammoth'
-import { htmlToPdf } from '../utils/utils'
+import XLSX from 'xlsx'
+import { readWorkbook } from '../utils/utils'
 import Pdf from './Pdf'
 
-const Docx = (props) => {
+const Xlsx = (props) => {
   const { src, style } = props
   const [url, setUrl] = useState('')
   useEffect(() => {
@@ -13,16 +13,9 @@ const Docx = (props) => {
     fileRequest.responseType = 'arraybuffer'
     fileRequest.onreadystatechange = async () => {
       if (fileRequest.readyState === 4 && fileRequest.status === 200) {
-        const requestResult = await mammoth.convertToHtml(
-          { arrayBuffer: fileRequest.response },
-          { includeDefaultStyleMap: true }
-        )
-        const opt = {
-          margin: 0.8,
-          image: { type: 'jpeg', quality: 1 },
-          jsPDF: { unit: 'cm', format: 'letter', orientation: 'p' },
-        }
-        const res = await htmlToPdf(requestResult.value, opt)
+        const data = new Uint8Array(fileRequest.response)
+        const workbook = XLSX.read(data, { type: 'array' })
+        const res = await readWorkbook(workbook)
         setUrl(res)
       }
     }
@@ -31,4 +24,4 @@ const Docx = (props) => {
   return <Pdf src={url} style={style} />
 }
 
-export default Docx
+export default Xlsx

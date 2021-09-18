@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Pdf, Docx, Unsupported } from './components'
+import { Pdf, Docx, Xlsx, Unsupported } from './components'
 
 const Viewer = (props) => {
   const { fileType } = props
@@ -11,6 +11,9 @@ const Viewer = (props) => {
     }
     case 'docx': {
       return <Docx {...props} />
+    }
+    case 'xlsx': {
+      return <Xlsx {...props} />
     }
     default: {
       return <Unsupported {...props} />

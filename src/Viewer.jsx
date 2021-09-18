@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Pdf, Docx, Xlsx, Audio, Unsupported } from './components'
+import { Pdf, Docx, Xlsx, Audio, Video, Unsupported } from './components'
 
 const Viewer = (props) => {
   const { fileType } = props
@@ -17,6 +17,10 @@ const Viewer = (props) => {
     }
     case 'mp3': {
       return <Audio {...props} />
+    }
+    case 'webm':
+    case 'mp4': {
+      return <Video {...props} />
     }
     default: {
       return <Unsupported {...props} />

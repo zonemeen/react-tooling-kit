@@ -1,12 +1,12 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import mp3 from './samples/sample.mp3'
+import mp4 from './samples/sample.mp4'
 
 const App = () => {
   return (
     <div>
-      <Viewer fileType="mp3" src={mp3} />
+      <Viewer fileType="mp4" src={mp4} />
     </div>
   )
 }

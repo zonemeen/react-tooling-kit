@@ -1,22 +1,16 @@
-import React from 'react'
-import { UnsupportedStyle } from '../styles/Unsupported'
+import React from "react";
+import "../styles/unsupported.scss";
 
-export const Unssuported = props => {
-    const { UnssuportedComponent, type, style } = props
-    return (
-        <UnsupportedStyle>
-            <div
-                className='unssuported'
-                style={style}
-            >
-                {UnssuportedComponent ?
-                    <UnssuportedComponent/> : (
-                        <p>
-                            <b>{`.${type} `}</b>
-                            is not supported.
-                        </p>
-                    )}
-            </div>
-        </UnsupportedStyle>
-    )
-}
+const Unsupported = (props) => (
+  <div className="unsupported">
+    {props.unsupportedComponent ? (
+      <props.unsupportedComponent {...props} />
+    ) : (
+      <p>
+        <b>{`${props.fileType}`}</b> is not supported.
+      </p>
+    )}
+  </div>
+);
+
+export default Unsupported;

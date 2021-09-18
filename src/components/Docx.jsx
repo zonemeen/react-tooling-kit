@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import mammoth from 'mammoth'
 import { htmlToPdf } from '../utils/utils'
+import docxStyle from '../utils/docxStyle'
 import Pdf from './Pdf'
 
 const Docx = (props) => {
@@ -22,7 +23,9 @@ const Docx = (props) => {
           image: { type: 'jpeg', quality: 1 },
           jsPDF: { unit: 'cm', format: 'letter', orientation: 'p' },
         }
-        const res = await htmlToPdf(requestResult.value, opt)
+        let html = requestResult.value
+        html += docxStyle
+        const res = await htmlToPdf(html, opt)
         setUrl(res)
       }
     }

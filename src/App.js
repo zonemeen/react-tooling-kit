@@ -1,14 +1,14 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import xlsx from './samples/sample.xlsx'
+import docx from './samples/sample2.docx'
 
 const App = () => {
   return (
     <div>
       <Viewer
-        fileType="xlsx"
-        src={xlsx}
+        fileType="docx"
+        src={docx}
         style={{ width: '100%', height: 900 }}
       />
     </div>

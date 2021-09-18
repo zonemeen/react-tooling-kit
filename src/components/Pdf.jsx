@@ -7,7 +7,11 @@ const Pdf = (props) => {
     <div>
       {!src && <Loading />}
       {src && (
-        <iframe title="myFrame" style={style} src={src}>
+        <iframe
+          title="myFrame"
+          style={{ width: '100%', height: 600, ...style }}
+          src={src}
+        >
           <p>
             It appears you don't have a PDF plugin for this browser. No
             biggie... you can{' '}

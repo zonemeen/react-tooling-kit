@@ -1,16 +1,12 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import xlsx from './samples/sample.xlsx'
+import mp3 from './samples/sample.mp3'
 
 const App = () => {
   return (
     <div>
-      <Viewer
-        fileType="xlsx"
-        src={xlsx}
-        style={{ width: '100%', height: 900 }}
-      />
+      <Viewer fileType="mp3" src={mp3} />
     </div>
   )
 }

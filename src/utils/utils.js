@@ -1,5 +1,6 @@
 import html2pdf from 'html2pdf.js'
 import XLSX from 'xlsx'
+import xlsxStyle from '../utils/xlsxStyle'
 
 const base64ToBlob = (code) => {
   const arr = code.split(',')
@@ -41,6 +42,7 @@ const csv2Table = (csv) => {
     html += '</tr>'
   })
   html += '</table>'
+  html += xlsxStyle
   return html
 }
 

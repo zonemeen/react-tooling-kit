@@ -15,7 +15,12 @@ const Viewer = (props) => {
     case 'xlsx': {
       return <Xlsx {...props} />
     }
-    case 'mp3': {
+    case 'mp3':
+    case 'aac':
+    case 'wav':
+    case 'flac':
+    case 'm4a':
+    case 'ogg': {
       return <Audio {...props} />
     }
     case 'webm':

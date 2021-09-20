@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Loading from '../Loading'
 
-const Pdf = (props) => {
-  const { src, style, fileType } = props
+const Pdf = ({ src, style, fileType }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
-    if (fileType === 'pdf') {
-      const fileRequest = new XMLHttpRequest()
-      fileRequest.open('GET', src, true)
-      fileRequest.send()
-      fileRequest.responseType = 'blob'
-      fileRequest.onreadystatechange = () => {
-        if (fileRequest.readyState === 4 && fileRequest.status === 200) {
-          const res = URL.createObjectURL(fileRequest.response)
-          setUrl(res)
+    const fetchData = async () => {
+      if (fileType === 'pdf') {
+        try {
+          const file = await axios.get(src, {
+            responseType: 'blob',
+          })
+          const objectUrl = URL.createObjectURL(file.data)
+          setUrl(objectUrl)
+        } catch (error) {
+          throw error
         }
+      } else {
+        setUrl(src)
       }
-    } else {
-      setUrl(src)
     }
+    fetchData()
   }, [src, fileType])
   return (
     <div>

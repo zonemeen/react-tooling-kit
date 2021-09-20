@@ -1,12 +1,12 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import pdf from './samples/sample.pdf'
+import xlsx from './samples/sample.xlsx'
 
 const App = () => {
   return (
     <div>
-      <Viewer fileType="pdf" src={pdf} style={{ height: 900 }} />
+      <Viewer fileType="xlsx" src={xlsx} style={{ height: 900 }} />
     </div>
   )
 }

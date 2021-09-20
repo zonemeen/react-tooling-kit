@@ -1,12 +1,13 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import xlsx from './samples/sample.xlsx'
+const pdf =
+  'https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_1MB.pdf'
 
 const App = () => {
   return (
     <div>
-      <Viewer fileType="xlsx" src={xlsx} style={{ height: 900 }} />
+      <Viewer fileType="pdf" src={pdf} style={{ height: 900 }} />
     </div>
   )
 }

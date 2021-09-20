@@ -1,12 +1,12 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import mp4 from './samples/sample.mp4'
+import pdf from './samples/sample.pdf'
 
 const App = () => {
   return (
     <div>
-      <Viewer fileType="mp4" src={mp4} />
+      <Viewer fileType="pdf" src={pdf} style={{ height: 900 }} />
     </div>
   )
 }

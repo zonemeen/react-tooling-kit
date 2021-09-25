@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import XLSX from 'xlsx'
 import { readWorkbook } from '../utils/utils'
-import Pdf from './Pdf'
+import Iframe from './Iframe'
 
 const Xlsx = (props) => {
   const { src, style } = props
@@ -20,7 +20,7 @@ const Xlsx = (props) => {
     fetchData()
   }, [src])
 
-  return <Pdf src={url} style={style} />
+  return <Iframe src={url} style={style} />
 }
 
 export default Xlsx

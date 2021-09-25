@@ -3,7 +3,7 @@ import axios from 'axios'
 import mammoth from 'mammoth'
 import { htmlToPdf } from '../utils/utils'
 import docxStyle from '../utils/docxStyle'
-import Pdf from './Pdf'
+import Iframe from './Iframe'
 
 const Docx = ({ src, style }) => {
   const [url, setUrl] = useState('')
@@ -28,7 +28,7 @@ const Docx = ({ src, style }) => {
     fetchData()
   }, [src])
 
-  return <Pdf src={url} style={style} />
+  return <Iframe src={url} style={style} />
 }
 
 export default Docx

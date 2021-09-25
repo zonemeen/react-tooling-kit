@@ -1,10 +1,15 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import jpg from './samples/sample.jpg'
+import pdf from './samples/sample.pdf'
 
 const App = () => {
-  return <Viewer fileType="jpg" src={jpg} />
+  return (
+    <div>
+      <h1>PDF</h1>
+      <Viewer fileType="pdf" src={pdf} />
+    </div>
+  )
 }
 
 export default App

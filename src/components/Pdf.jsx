@@ -1,48 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Loading from '../Loading'
+import Iframe from './Iframe'
 
-const Pdf = ({ src, style, fileType }) => {
+const Pdf = ({ src, style }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
-      if (fileType === 'pdf') {
-        const file = await axios.get(src, {
-          responseType: 'blob',
-        })
-        const objectUrl = URL.createObjectURL(file.data)
-        setUrl(objectUrl)
-      } else {
-        setUrl(src)
-      }
+      const file = await axios.get(src, {
+        responseType: 'blob',
+      })
+      const objectUrl = URL.createObjectURL(file.data)
+      setUrl(objectUrl)
     }
     fetchData()
-  }, [src, fileType])
-  return (
-    <div>
-      {!url && <Loading />}
-      {url && (
-        <iframe
-          title="myFrame"
-          style={{
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            width: '100%',
-            height: '100%',
-            ...style,
-          }}
-          src={url}
-        >
-          <p>
-            It appears you don't have a PDF plugin for this browser. No
-            biggie... you can{' '}
-            <a href={url}>click here to download the PDF file.</a>
-          </p>
-        </iframe>
-      )}
-    </div>
-  )
+  }, [src])
+  return <Iframe src={url} style={style} />
 }
 
 export default Pdf

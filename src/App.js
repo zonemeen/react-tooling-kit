@@ -1,14 +1,10 @@
 import React from 'react'
 import Viewer from './Viewer'
 
-import pptx from './samples/sample.pptx'
+import jpg from './samples/sample.jpg'
 
 const App = () => {
-  return (
-    <div>
-      <Viewer fileType="pptx" src={pptx} />
-    </div>
-  )
+  return <Viewer fileType="jpg" src={jpg} />
 }
 
 export default App

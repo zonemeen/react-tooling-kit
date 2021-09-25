@@ -7,15 +7,11 @@ const Pdf = ({ src, style, fileType }) => {
   useEffect(() => {
     const fetchData = async () => {
       if (fileType === 'pdf') {
-        try {
-          const file = await axios.get(src, {
-            responseType: 'blob',
-          })
-          const objectUrl = URL.createObjectURL(file.data)
-          setUrl(objectUrl)
-        } catch (error) {
-          throw error
-        }
+        const file = await axios.get(src, {
+          responseType: 'blob',
+        })
+        const objectUrl = URL.createObjectURL(file.data)
+        setUrl(objectUrl)
       } else {
         setUrl(src)
       }

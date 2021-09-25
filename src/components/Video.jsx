@@ -4,7 +4,6 @@ import Loading from '../Loading'
 const Video = ({ fileType, src, style }) => {
   const [loading, setLoading] = useState(true)
   const visibility = loading ? 'hidden' : 'visible'
-
   const onCanPlay = () => setLoading(false)
 
   return (

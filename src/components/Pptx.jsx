@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import '../styles/nv.d3.scss'
 import '../styles/pptxjs.scss'
+
 const Pptx = ({ src, style }) => {
   useEffect(() => {
     const fetchData = async () => {

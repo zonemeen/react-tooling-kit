@@ -28,7 +28,14 @@ const Pdf = ({ src, style, fileType }) => {
       {url && (
         <iframe
           title="myFrame"
-          style={{ width: '100%', height: 600, ...style }}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            ...style,
+          }}
           src={url}
         >
           <p>

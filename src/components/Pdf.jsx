@@ -6,11 +6,10 @@ const Pdf = ({ src, style }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
-      const file = await axios.get(src, {
+      const { data } = await axios.get(src, {
         responseType: 'blob',
       })
-      const objectUrl = URL.createObjectURL(file.data)
-      setUrl(objectUrl)
+      setUrl(URL.createObjectURL(data))
     }
     fetchData()
   }, [src])

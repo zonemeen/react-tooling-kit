@@ -9,21 +9,19 @@ const Docx = ({ src, style }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(src, {
+      const { data } = await axios.get(src, {
         responseType: 'arraybuffer',
-      })
-      const htmlResult = await mammoth.convertToHtml({
-        arrayBuffer: response.data,
       })
       const opt = {
         margin: 0.8,
         image: { type: 'jpeg', quality: 1 },
         jsPDF: { unit: 'cm', format: 'letter', orientation: 'p' },
       }
-      let html = htmlResult.value
+      let { value: html } = await mammoth.convertToHtml({
+        arrayBuffer: data,
+      })
       html += docxStyle
-      const objectUrl = await htmlToPdf(html, opt)
-      setUrl(objectUrl)
+      setUrl(await htmlToPdf(html, opt))
     }
     fetchData()
   }, [src])

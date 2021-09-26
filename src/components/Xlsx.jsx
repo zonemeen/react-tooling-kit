@@ -9,13 +9,12 @@ const Xlsx = (props) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(src, {
+      const { data } = await axios.get(src, {
         responseType: 'arraybuffer',
       })
-      const data = new Uint8Array(response.data)
-      const workbook = XLSX.read(data, { type: 'array' })
-      const objectUrl = await readWorkbook(workbook)
-      setUrl(objectUrl)
+      const arrData = new Uint8Array(data)
+      const workbook = XLSX.read(arrData, { type: 'array' })
+      setUrl(await readWorkbook(workbook))
     }
     fetchData()
   }, [src])

@@ -31,16 +31,15 @@
     ```
 
 ## 使用
-
-    ```js
-    import Viewer from './Viewer'
-
-    <Viewer fileType="" src={url} />
-    ```
+```js
+import Viewer from './Viewer'
     
-    src/App.js下有使用用例，其中:
-
-    `fileType(文件类型)`: pdf/docx/xlsx/pptx/mp3/mp4/png...
-
-    `src(文件地址)`: import('相对路径')或在线地址
+<Viewer fileType="" src={url} />
+```
+    
+src/App.js下有使用用例，其中:
+    
+`fileType(文件类型)`: pdf/docx/xlsx/pptx/mp3/mp4/png...
+    
+`src(文件地址)`: import('相对路径')或在线地址
 

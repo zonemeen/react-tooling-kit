@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import XLSX from 'xlsx'
-import { readWorkbook } from '../utils/utils'
+import { workbookToHtml } from '../utils/utils'
 import Iframe from './Iframe'
 
-const Xlsx = (props) => {
-  const { src, style } = props
+const Xlsx = ({ src, style, className }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
@@ -14,12 +13,12 @@ const Xlsx = (props) => {
       })
       const arrData = new Uint8Array(data)
       const workbook = XLSX.read(arrData, { type: 'array' })
-      setUrl(await readWorkbook(workbook))
+      setUrl(workbookToHtml(workbook))
     }
     fetchData()
   }, [src])
 
-  return <Iframe src={url} style={style} />
+  return <Iframe src={url} style={style} className={className} isHtml={true} />
 }
 
 export default Xlsx

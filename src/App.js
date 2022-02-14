@@ -31,22 +31,57 @@ const App = () => {
       <h1>DOCX</h1>
       <Viewer
         style={{
-          width: '100%',
+          width: '50%',
           height: 800,
         }}
         fileType="docx"
         src={docx}
       />
       <h1>DOCX-Online</h1>
-      <Viewer fileType="docx" src={docxUrl} />
+      <Viewer
+        style={{
+          width: '50%',
+          height: 800,
+        }}
+        fileType="docx"
+        src={docxUrl}
+      />
       <h1>PDF</h1>
-      <Viewer fileType="pdf" src={pdf} />
+      <Viewer
+        style={{
+          width: '100%',
+          height: 800,
+        }}
+        fileType="pdf"
+        src={pdf}
+      />
       <h1>PDF-Online</h1>
-      <Viewer fileType="pdf" src={pdfUrl} />
+      <Viewer
+        style={{
+          width: '100%',
+          height: 800,
+        }}
+        fileType="pdf"
+        src={pdfUrl}
+      />
       <h1>XLSX</h1>
-      <Viewer fileType="xlsx" src={xlsx} />
+      <Viewer
+        style={{
+          width: '50%',
+          height: 800,
+        }}
+        fileType="xlsx"
+        src={xlsx}
+      />
       <h1>XLSX-Online</h1>
-      <Viewer fileType="xlsx" src={xlsxUrl} />
+      <Viewer
+        style={{
+          width: '50%',
+          height: 800,
+        }}
+        fileType="xlsx"
+        src={xlsxUrl}
+      />
       <h1>PPTX</h1>
       <Viewer fileType="pptx" src={pptx} />
       <h1>MP3</h1>

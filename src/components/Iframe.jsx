@@ -1,7 +1,7 @@
 import React from 'react'
 import Loading from '../Loading'
 
-const Iframe = ({ src, style, className }) => {
+const Iframe = ({ src, style, className, isHtml = false }) => {
   return (
     <div>
       {!src && <Loading />}
@@ -9,10 +9,9 @@ const Iframe = ({ src, style, className }) => {
         <iframe
           title="myFrame"
           className={className}
-          style={{
-            ...style,
-          }}
-          src={src}
+          style={style}
+          src={isHtml ? undefined : src}
+          srcDoc={isHtml ? src : undefined}
         >
           <p>
             It appears you don't have a PDF plugin for this browser. No

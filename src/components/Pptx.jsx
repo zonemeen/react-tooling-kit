@@ -3,7 +3,7 @@ import axios from 'axios'
 import '../styles/nv.d3.scss'
 import '../styles/pptxjs.scss'
 
-const Pptx = ({ src, style }) => {
+const Pptx = ({ src, style, className }) => {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(src, {
@@ -18,7 +18,7 @@ const Pptx = ({ src, style }) => {
     fetchData()
   }, [src])
 
-  return <div id="result" style={style} />
+  return <div id="result" style={style} className={className} />
 }
 
 export default Pptx

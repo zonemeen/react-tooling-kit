@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Iframe from './Iframe'
 
-const Pdf = ({ src, style }) => {
+const Pdf = ({ src, style, className }) => {
   const [url, setUrl] = useState('')
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +13,7 @@ const Pdf = ({ src, style }) => {
     }
     fetchData()
   }, [src])
-  return <Iframe src={url} style={style} />
+  return <Iframe src={url} style={style} className={className} isHtml={false} />
 }
 
 export default Pdf

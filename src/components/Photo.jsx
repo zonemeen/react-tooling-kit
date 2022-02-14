@@ -3,7 +3,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Loading from '../Loading'
 
-const Photo = ({ src, style }) => {
+const Photo = ({ src, style, className }) => {
   const [hasImg, setHasImg] = useState(false)
   useEffect(() => {
     const img = new Image()
@@ -15,7 +15,7 @@ const Photo = ({ src, style }) => {
 
   return hasImg ? (
     <Zoom>
-      <img src={src} style={style} alt="" />
+      <img src={src} style={style} className={className} alt="" />
     </Zoom>
   ) : (
     <Loading />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Loading from '../Loading'
 
-const Video = ({ fileType, src, style }) => {
+const Video = ({ fileType, src, style, className }) => {
   const [loading, setLoading] = useState(true)
   const visibility = loading ? 'hidden' : 'visible'
   const onCanPlay = () => setLoading(false)
@@ -11,6 +11,7 @@ const Video = ({ fileType, src, style }) => {
       {loading && <Loading />}
       <video
         style={{ ...style, visibility }}
+        className={className}
         controls
         type={`video/${fileType}`}
         onCanPlay={onCanPlay}

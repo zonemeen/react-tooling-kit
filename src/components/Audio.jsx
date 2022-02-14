@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Loading from '../Loading'
 
-const Audio = ({ src, style }) => {
+const Audio = ({ src, style, className }) => {
   const [loading, setLoading] = useState(true)
   const visibility = loading ? 'hidden' : 'visible'
   const onCanPlay = () => setLoading(false)
@@ -10,6 +10,7 @@ const Audio = ({ src, style }) => {
     <div>
       {loading && <Loading />}
       <audio
+        className={className}
         style={{ visibility, ...style }}
         controls
         onCanPlay={onCanPlay}

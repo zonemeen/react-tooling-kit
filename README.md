@@ -34,7 +34,15 @@
 ```js
 import Viewer from './Viewer'
     
-<Viewer fileType="" src={url} />
+<Viewer
+    className='main'
+    style={{
+        width: '100%',
+        height: 800,
+    }}
+    fileType='docx'
+    src={src}
+/>
 ```
     
 src/App.js下有使用用例，其中:

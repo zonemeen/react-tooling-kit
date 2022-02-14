@@ -67,7 +67,7 @@ const App = () => {
       <h1>XLSX</h1>
       <Viewer
         style={{
-          width: '50%',
+          width: '40%',
           height: 800,
         }}
         fileType="xlsx"
@@ -76,7 +76,7 @@ const App = () => {
       <h1>XLSX-Online</h1>
       <Viewer
         style={{
-          width: '50%',
+          width: '40%',
           height: 800,
         }}
         fileType="xlsx"

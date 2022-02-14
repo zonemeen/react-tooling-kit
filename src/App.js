@@ -29,7 +29,14 @@ const App = () => {
       <h1>GIF-Online</h1>
       <Viewer fileType="gif" src={gif} />
       <h1>DOCX</h1>
-      <Viewer fileType="docx" src={docx} />
+      <Viewer
+        style={{
+          width: '100%',
+          height: 800,
+        }}
+        fileType="docx"
+        src={docx}
+      />
       <h1>DOCX-Online</h1>
       <Viewer fileType="docx" src={docxUrl} />
       <h1>PDF</h1>

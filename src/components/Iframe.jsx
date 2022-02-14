@@ -1,16 +1,15 @@
 import React from 'react'
 import Loading from '../Loading'
 
-const Iframe = ({ src, style }) => {
+const Iframe = ({ src, style, className }) => {
   return (
     <div>
       {!src && <Loading />}
       {src && (
         <iframe
           title="myFrame"
+          className={className}
           style={{
-            width: '100%',
-            height: 800,
             ...style,
           }}
           src={src}

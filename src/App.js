@@ -9,17 +9,12 @@ import pptx from './samples/sample.pptx'
 import mp3 from './samples/sample.mp3'
 import mp4 from './samples/sample.mp4'
 
-const gif = 'https://blog.hubspot.com/hubfs/Smiling%20Leo%20Perfect%20GIF.gif'
-const docxUrl =
-  'https://file-examples-com.github.io/uploads/2017/02/file-sample_100kB.docx'
-const pdfUrl =
-  'https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf'
-const xlsxUrl =
-  'https://file-examples-com.github.io/uploads/2017/02/file_example_XLSX_50.xlsx'
-const mp3Url =
-  'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3'
-const mp4Url =
-  'https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_640_3MG.mp4'
+const gif = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.gif'
+const docxUrl = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.docx'
+const pdfUrl = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.pdf'
+const xlsxUrl = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.xlsx'
+const mp3Url = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.mp3'
+const mp4Url = 'https://miqilin-blog.oss-cn-shenzhen.aliyuncs.com/sample.mp4'
 
 const App = () => {
   return (

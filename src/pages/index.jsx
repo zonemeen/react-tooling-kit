@@ -9,10 +9,10 @@ export default function HomePage() {
         <a
           target="_blank"
           rel="noopener nofollow"
-          href="https://github.com/sponsors/zonemeen"
+          href="https://github.com/zonemeen/react-file-preview"
           className="mb-5 border-2 border-pink-400 text-pink-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-pink-50"
         >
-          <span>Sponsor this project on GitHub.</span>
+          <span>View this project on GitHub.</span>
         </a>
         <div className="bg-cyan-100 text-cyan-700 font-bold p-5 rounded-lg space-y-3">
           <p>

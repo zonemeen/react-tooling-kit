@@ -1,6 +1,6 @@
 {
-  "short_name": "One Tooling",
-  "name": "One Tooling",
+  "short_name": "File Preview",
+  "name": "File Preview",
   "icons": [
     {
       "src": "/assets/android-chrome-192x192.png",
@@ -56,5 +56,5 @@
   "start_url": "/",
   "theme_color": "#f9fafb",
   "orientation": "portrait",
-  "description": "All the tools you need in one place!"
+  "description": "All the file-preview-tools you need in one place!"
 }

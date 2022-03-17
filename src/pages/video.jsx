@@ -1,36 +1,6 @@
-import React, { useState } from 'react'
-import { Layout } from '../components/Layout'
-import { Column, TwoColumns } from '../components/TwoColumns'
-import Viewer from '../components/Viewer'
+import NotOfficeFile from '../components/NotOfficeFile'
 
-export default function Video() {
-  const [result, setResult] = useState('')
-  const [type, setType] = useState('')
-
-  const handleChange = (e) => {
-    const file = e.target.files[0]
-    const { type } = file
-    setType(type.slice(type.lastIndexOf('/') + 1))
-    const reader = new FileReader()
-    reader.onloadend = () => {
-      setResult(reader.result.toString())
-    }
-    reader.onerror = (err) => {
-      alert(err)
-    }
-    reader.readAsDataURL(file)
-  }
-
-  return (
-    <Layout>
-      <TwoColumns>
-        <Column title="Video">
-          <input type="file" accept="video/*" onChange={handleChange} />
-        </Column>
-        <Column title="Result">
-          {result && <Viewer fileType={type} src={result} />}
-        </Column>
-      </TwoColumns>
-    </Layout>
-  )
+export default function Docx() {
+  const mimeType = 'video/*'
+  return <NotOfficeFile mimeType={mimeType} fileType="video" />
 }

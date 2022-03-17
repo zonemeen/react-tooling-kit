@@ -1,36 +1,6 @@
-import React, { useState } from 'react'
-import { Layout } from '../components/Layout'
-import { Column, TwoColumns } from '../components/TwoColumns'
-import Viewer from '../components/Viewer'
+import NotOfficeFile from '../components/NotOfficeFile'
 
-export default function Photo() {
-  const [result, setResult] = useState('')
-  const [type, setType] = useState('')
-
-  const handleChange = (e) => {
-    const file = e.target.files[0]
-    const { type } = file
-    setType(type.slice(type.lastIndexOf('/') + 1))
-    const reader = new FileReader()
-    reader.onloadend = () => {
-      setResult(reader.result.toString())
-    }
-    reader.onerror = (err) => {
-      alert(err)
-    }
-    reader.readAsDataURL(file)
-  }
-
-  return (
-    <Layout>
-      <TwoColumns>
-        <Column title="Photo">
-          <input type="file" accept="image/*" onChange={handleChange} />
-        </Column>
-        <Column title="Result">
-          {result && <Viewer fileType={type} src={result} />}
-        </Column>
-      </TwoColumns>
-    </Layout>
-  )
+export default function Docx() {
+  const mimeType = 'image/*'
+  return <NotOfficeFile mimeType={mimeType} fileType="photo" />
 }

@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply resize-none border rounded-lg p-2 focus:border-indigo-500 focus:ring-indigo-500;
+  @apply disabled:cursor-not-allowed;
+}
+
+.code {
+  @apply border rounded-lg p-3 overflow-auto;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .loading {
+    background-image: url('../assets/spin.png');
+    background-repeat: no-repeat;
+    height: 96px;
+    width: 96px;
+    animation: rotating 2s linear infinite;
+  }
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

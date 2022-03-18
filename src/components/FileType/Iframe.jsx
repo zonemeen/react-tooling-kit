@@ -9,8 +9,11 @@ const Iframe = ({ src, style, className, isHtml = false }) => {
         <iframe
           title="myFrame"
           className={className}
-          style={style}
-          src={isHtml ? undefined : src}
+          style={{
+            ...style,
+            border: '1px solid #d6d6d6',
+          }}
+          src={isHtml ? undefined : src + '#toolbar=0'}
           srcDoc={isHtml ? src : undefined}
         >
           <p>

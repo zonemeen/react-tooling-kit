@@ -3,15 +3,17 @@ import { Layout } from './Layout'
 import { Column, TwoColumns } from './TwoColumns'
 import Viewer from '../components/Viewer'
 
-export default function Audio({ mimeType, fileType }) {
+export default function DiffFiles({ mimeType, fileType, isOfficeFile = true }) {
   const [result, setResult] = useState('')
   const [type, setType] = useState('')
 
   const handleChange = (e) => {
     setResult('')
     const file = e.target.files[0]
-    const { type } = file
-    setType(type.slice(type.lastIndexOf('/') + 1))
+    if (!isOfficeFile) {
+      const { type } = file
+      setType(type.slice(type.lastIndexOf('/') + 1))
+    }
     const reader = new FileReader()
     reader.onloadend = () => {
       setResult(reader.result.toString())
@@ -29,7 +31,14 @@ export default function Audio({ mimeType, fileType }) {
           <input type="file" accept={mimeType} onChange={handleChange} />
         </Column>
         <Column title="Result">
-          {result && <Viewer fileType={type} src={result} />}
+          {result && (
+            <Viewer
+              className={isOfficeFile ? 'w-full' : ''}
+              style={{ height: isOfficeFile ? 'calc(100vh - 100px)' : '' }}
+              fileType={isOfficeFile ? fileType : type}
+              src={result}
+            />
+          )}
         </Column>
       </TwoColumns>
     </Layout>

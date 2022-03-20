@@ -1,7 +1,8 @@
-import OfficeFile from '../components/OfficeFile'
+import React from 'react'
+import DiffFiles from '../components/DiffFiles'
 
 export default function Pptx() {
   const mimeType =
     'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-  return <OfficeFile mimeType={mimeType} fileType="pptx" />
+  return <DiffFiles mimeType={mimeType} fileType="pptx" />
 }

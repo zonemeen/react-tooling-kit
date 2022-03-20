@@ -1,7 +1,8 @@
-import OfficeFile from '../components/OfficeFile'
+import React from 'react'
+import DiffFiles from '../components/DiffFiles'
 
 export default function Docx() {
   const mimeType =
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-  return <OfficeFile mimeType={mimeType} fileType="docx" />
+  return <DiffFiles mimeType={mimeType} fileType="docx" />
 }

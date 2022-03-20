@@ -1,6 +1,7 @@
-import NotOfficeFile from '../components/NotOfficeFile'
+import React from 'react'
+import DiffFiles from '../components/DiffFiles'
 
 export default function Docx() {
   const mimeType = 'video/*'
-  return <NotOfficeFile mimeType={mimeType} fileType="video" />
+  return <DiffFiles mimeType={mimeType} fileType="video" isOfficeFile={false} />
 }

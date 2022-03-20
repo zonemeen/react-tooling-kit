@@ -1,7 +1,8 @@
-import OfficeFile from '../components/OfficeFile'
+import React from 'react'
+import DiffFiles from '../components/DiffFiles'
 
 export default function Xlsx() {
   const mimeType =
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-  return <OfficeFile mimeType={mimeType} fileType="xlsx" />
+  return <DiffFiles mimeType={mimeType} fileType="xlsx" />
 }

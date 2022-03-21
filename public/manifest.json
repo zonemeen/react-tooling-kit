@@ -1,6 +1,6 @@
 {
-  "short_name": "File Preview",
-  "name": "File Preview",
+  "short_name": "Tooling Kit",
+  "name": "Tooling Kit",
   "icons": [
     {
       "src": "/assets/android-chrome-192x192.png",
@@ -56,5 +56,5 @@
   "start_url": "/",
   "theme_color": "#f9fafb",
   "orientation": "portrait",
-  "description": "All the file-preview-tools you need in one place!"
+  "description": "Awesome tooling kits you need in one place!"
 }

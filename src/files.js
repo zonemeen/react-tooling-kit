@@ -1,30 +1,35 @@
 export const files = [
   {
-    name: 'PDF Preview',
-    link: '/pdf',
-  },
-  {
-    name: 'DOCX Preview',
-    link: '/docx',
-  },
-  {
-    name: 'XLSX Preview',
-    link: '/xlsx',
-  },
-  {
-    name: 'PPTX Preview',
-    link: '/pptx',
-  },
-  {
-    name: 'PHOTO Preview',
-    link: '/photo',
-  },
-  {
-    name: 'VIDEO Preview',
-    link: '/video',
-  },
-  {
-    name: 'AUDIO Preview',
-    link: '/audio',
+    title: 'File Preview',
+    path: [
+      {
+        name: 'PDF',
+        link: '/file-preview/pdf',
+      },
+      {
+        name: 'DOCX',
+        link: '/file-preview/docx',
+      },
+      {
+        name: 'XLSX',
+        link: '/file-preview/xlsx',
+      },
+      {
+        name: 'PPTX',
+        link: '/file-preview/pptx',
+      },
+      {
+        name: 'PHOTO',
+        link: '/file-preview/photo',
+      },
+      {
+        name: 'VIDEO',
+        link: '/file-preview/video',
+      },
+      {
+        name: 'AUDIO',
+        link: '/file-preview/audio',
+      },
+    ],
   },
 ]

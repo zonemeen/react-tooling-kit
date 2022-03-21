@@ -61,7 +61,7 @@ export const Sidebar = () => {
                     fill="url(#logo-fill)"
                   />
                 </svg>
-                <span>File Preview</span>
+                <span>Tooling Kit</span>
               </a>
             </Link>
           </h1>
@@ -96,21 +96,26 @@ export const Sidebar = () => {
         )}
       >
         <div className="p-3">
-          {files.map((file) => {
-            const isActive = router.asPath === file.link
-            return (
-              <Link href={file.link} key={file.link}>
-                <a
-                  className={clsx(
-                    `px-4 py-1 rounded-lg flex`,
-                    isActive && `bg-light-blue text-white`
-                  )}
-                >
-                  {file.name}
-                </a>
-              </Link>
-            )
-          })}
+          {files.map((file) => (
+            <div key={file.title}>
+              <div className="pb-1">{file.title}</div>
+              {file.path.map((item) => {
+                const isActive = router.asPath === item.link
+                return (
+                  <Link href={item.link} key={item.link}>
+                    <a
+                      className={clsx(
+                        `px-4 py-1 rounded-lg flex`,
+                        isActive && `bg-light-blue text-white`
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  </Link>
+                )
+              })}
+            </div>
+          ))}
         </div>
         <div className="p-4 mt-5">
           <ul className="text-xs">

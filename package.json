@@ -1,7 +1,7 @@
 {
-  "name": "react-file-preview",
+  "name": "react-tooling-kit",
   "version": "0.1.0",
-  "description": "Component to render and preview some kind of files",
+  "description": "Tooling-kit is a collection of useful tools for developers",
   "private": false,
   "author": "miqilin21 <miqilin18@gmail.com>",
   "license": "MIT",

@@ -17,7 +17,7 @@ export const Layout = ({ children, title }) => {
     <>
       <Head>
         <title>
-          {documentTitle ? `${documentTitle} - File Preview` : `File Preview`}
+          {documentTitle ? `${documentTitle} - Tooling Kit` : `Tooling Kit`}
         </title>
         <meta
           name="description"

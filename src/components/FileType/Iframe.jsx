@@ -1,5 +1,5 @@
 import React from 'react'
-import Loading from './Loading'
+import Loading from '../Loading'
 
 const Iframe = ({ src, style, className, isHtml = false }) => {
   return (

@@ -98,7 +98,7 @@ export const Sidebar = () => {
         <div className="p-3">
           {files.map((file) => (
             <div key={file.title}>
-              <div className="pb-1">{file.title}</div>
+              <div className="py-1 text-zinc-500">{file.title}</div>
               {file.path.map((item) => {
                 const isActive = router.asPath === item.link
                 return (

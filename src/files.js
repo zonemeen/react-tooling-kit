@@ -32,4 +32,13 @@ export const files = [
       },
     ],
   },
+  {
+    title: 'File Zip',
+    path: [
+      {
+        name: 'Zip',
+        link: '/file-zip/zip',
+      },
+    ],
+  },
 ]

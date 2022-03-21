@@ -38,8 +38,8 @@ export default function HomePage() {
       <div>
         {files.map((file) => (
           <div key={file.title}>
-            <div className="pl-6 text-lg">{file.title}</div>
-            <div className="grid md:grid-cols-3 gap-5 p-5 max-w-screen-lg">
+            <div className="pl-6 text-lg text-zinc-500">{file.title}:</div>
+            <div className="grid md:grid-cols-3 gap-5 p-4 max-w-screen-lg">
               {file.path.map((item) => {
                 return (
                   <Link href={item.link} key={item.name}>

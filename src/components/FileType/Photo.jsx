@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import Loading from './Loading'
+import Loading from '../Loading'
 
 const Photo = ({ src, style, className }) => {
   const [hasImg, setHasImg] = useState(false)

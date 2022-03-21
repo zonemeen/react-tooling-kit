@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Loading from './Loading'
+import Loading from '../Loading'
 
 const Video = ({ fileType, src, style, className }) => {
   const [loading, setLoading] = useState(true)

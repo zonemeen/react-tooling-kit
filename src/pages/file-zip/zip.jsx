@@ -16,14 +16,14 @@ export default function Zip() {
     const zip = new JSZip()
     const files = Array.from(e.target.files)
     files.length && setUploadFiles(files)
-    const fileReader = []
+    const fileReaderList = []
     files.map((file) => {
       const reader = new FileReader()
       reader.onloadend = () => {
-        fileReader.push({ name: file.name, result: reader.result })
-        if (fileReader.length === files.length) {
+        fileReaderList.push({ name: file.name, result: reader.result })
+        if (fileReaderList.length === files.length) {
           Promise.all(
-            fileReader.map(async (item) => {
+            fileReaderList.map(async (item) => {
               const { data } = await axios.get(item.result, {
                 responseType: 'blob',
               })

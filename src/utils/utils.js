@@ -33,3 +33,12 @@ export const workbookToHtml = (workbook) => {
   const csv = XLSX.utils.sheet_to_csv(worksheet)
   return csv2Table(csv)
 }
+
+export const readText = async (buffer) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = (loadEvent) => resolve(loadEvent.target.result)
+    reader.onerror = (e) => reject(e)
+    reader.readAsText(new Blob([buffer]), 'utf-8')
+  })
+}

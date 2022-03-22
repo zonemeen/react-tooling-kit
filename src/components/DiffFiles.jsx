@@ -11,8 +11,9 @@ export default function DiffFiles({ mimeType, fileType, isOfficeFile = true }) {
     setResult('')
     const file = e.target.files[0]
     if (!isOfficeFile) {
-      const { type } = file
-      setType(type.slice(type.lastIndexOf('/') + 1))
+      const { name } = file
+      console.log(name)
+      setType(name.slice(name.lastIndexOf('.') + 1))
     }
     const reader = new FileReader()
     reader.onloadend = () => {
@@ -35,7 +36,7 @@ export default function DiffFiles({ mimeType, fileType, isOfficeFile = true }) {
             <Viewer
               className={isOfficeFile ? 'w-full' : ''}
               style={{ height: isOfficeFile ? 'calc(100vh - 100px)' : '' }}
-              fileType={isOfficeFile ? fileType : type}
+              fileType={type}
               src={result}
             />
           )}

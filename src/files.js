@@ -19,6 +19,10 @@ export const files = [
         link: '/file-preview/pptx',
       },
       {
+        name: 'TEXT',
+        link: '/file-preview/text',
+      },
+      {
         name: 'PHOTO',
         link: '/file-preview/photo',
       },

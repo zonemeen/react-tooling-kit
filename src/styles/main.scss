@@ -40,3 +40,15 @@
   display: block !important;
   align-items: center;
 }
+
+.code-area {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 12px;
+  min-height: 60vh;
+  background: #1f1f1f;
+  word-break: break-word;
+  white-space: break-spaces;
+  color: #5af117
+}

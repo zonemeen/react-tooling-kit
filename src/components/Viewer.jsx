@@ -5,6 +5,7 @@ import {
   Docx,
   Xlsx,
   Pptx,
+  Text,
   Audio,
   Video,
   Photo,
@@ -26,6 +27,21 @@ const Viewer = (props) => {
     }
     case 'pptx': {
       return <Pptx {...props} />
+    }
+    case 'txt':
+    case 'json':
+    case 'js':
+    case 'css':
+    case 'java':
+    case 'py':
+    case 'html':
+    case 'jsx':
+    case 'ts':
+    case 'tsx':
+    case 'xml':
+    case 'md':
+    case 'log': {
+      return <Text {...props} />
     }
     case 'mp3':
     case 'mpeg':

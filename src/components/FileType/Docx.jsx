@@ -1,24 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { defaultOptions, renderAsync } from 'docx-preview'
+import mammoth from 'mammoth'
+import docxStyle from '../../utils/docxStyle'
+import Iframe from './Iframe'
 
 const Docx = ({ src, style, className }) => {
+  const [html, setHtml] = useState('')
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(src, {
         responseType: 'arraybuffer',
       })
-      const docxOptions = Object.assign(defaultOptions, {
-        debug: true,
-        experimental: true,
+      let { value: htmlStr } = await mammoth.convertToHtml({
+        arrayBuffer: data,
       })
-      const bodyContainer = document.getElementById('result')
-      await renderAsync(data, bodyContainer, null, docxOptions)
+      htmlStr += docxStyle
+      setHtml(htmlStr)
     }
     fetchData()
   }, [src])
 
-  return <div id="result" />
+  return <Iframe src={html} style={style} className={className} isHtml={true} />
 }
 
 export default Docx

@@ -1,53 +1,14 @@
-# react-file-preview(基于React的资源预览组件)
+# react-tooling-kit
 
-目前支持格式：文档(pdf、docx、xlsx、pptx)，音频(mp3)，视频(mp4)，图片(png、jpg、jpeg、gif)等
+https://react-tooling-kit.vercel.app
 
-## 项目开发
+## Development
 
-1. 克隆项目至本地：
-    ```sh
-    $ git clone git@github.com:miqilin21/react-file-preview.git
-    $ cd react-file-preview
-    ```
-2. 安装项目依赖：
-    ```sh
-    $ yarn
-    ```
-    或
-    ```sh
-    $ npm install
-    ```
-3. 运行项目：
-    ```sh
-    $ yarn start
-    ```
-    或
-    ```sh
-    $ npm run start
-    ```
-4. 打开浏览器预览：
-    ```sh
-    $ open http://localhost:3000
-    ```
-
-## 使用
-```js
-import Viewer from './Viewer'
-    
-<Viewer
-    className='main'
-    style={{
-        width: '100%',
-        height: 800,
-    }}
-    fileType='docx'
-    src={src}
-/>
+```bash
+yarn
+yarn dev
 ```
-    
-src/App.js下有使用用例，其中:
-    
-`fileType(文件类型)`: pdf/docx/xlsx/pptx/mp3/mp4/png...
-    
-`src(文件地址)`: import('相对路径')或在线地址
 
+## License
+
+Released under [MIT](/LICENSE) by [@zonemeen](https://github.com/zonemeen).

@@ -2,6 +2,12 @@ import React from 'react'
 import DiffFiles from '../../components/DiffFiles'
 
 export default function Docx() {
-  const mimeType = 'audio/*'
-  return <DiffFiles mimeType={mimeType} fileType="audio" isOfficeFile={false} />
+  return (
+    <DiffFiles
+      title="audio"
+      mimeType="audio/*"
+      allowedFileTypes="mp3,mpeg,aac,wav,flac,m4a,ogg"
+      isOfficeFile={false}
+    />
+  )
 }

@@ -6,7 +6,7 @@ const Unsupported = (props) => (
       <props.unsupportedComponent {...props} />
     ) : (
       <p>
-        <b>{`${props.fileType}`}</b> is not supported.
+        <b>{`${props.fileType}`}</b>
       </p>
     )}
   </div>

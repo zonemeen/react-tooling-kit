@@ -11,6 +11,7 @@ export default function Text() {
   const handleChange = async (e) => {
     const file = e.target.files[0]
     const { name } = file
+    console.log(file)
     const type = name.slice(name.lastIndexOf('.') + 1)
     const allowedFileTypes =
       'txt,json,js,css,java,py,html,jsx,ts,tsx,xml,md,log'

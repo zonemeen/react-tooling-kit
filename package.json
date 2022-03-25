@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
+    "file-loader": "^6.2.0",
     "postcss": "^8.4.12",
     "prettier": "^2.4.1",
     "sass": "^1.41.1",

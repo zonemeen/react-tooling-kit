@@ -45,4 +45,13 @@ export const files = [
       },
     ],
   },
+  {
+    title: 'Book Download',
+    path: [
+      {
+        name: 'Book Download',
+        link: '/book-download/book',
+      },
+    ],
+  },
 ]

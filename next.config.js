@@ -24,6 +24,15 @@ const nextConfig = {
         'react-dom': 'preact/compat',
       })
     }
+    config.module.rules.push({
+      test: /\.(png|woff|woff2|eot|ttf|gif|jpg|ico|svg|pdf)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name]_[hash].[ext]',
+        publicPath: `/_next/static/files`,
+        outputPath: 'static/files',
+      },
+    })
     config.experiments = config.experiments || {}
     config.resolve.alias['@'] = path.resolve(__dirname, './src')
     Object.assign(config.experiments, {

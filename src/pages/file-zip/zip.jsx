@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import JSZip from 'jszip'
 import axios from 'axios'
 import { saveAs } from 'file-saver'
-import { Layout } from '../../components/Layout'
-import { Column, TwoColumns } from '../../components/TwoColumns'
-import { Button } from '../../components/Button'
-import Loading from '../../components/Loading'
+import { Layout } from '@/components/Layout'
+import { Column, TwoColumns } from '@/components/TwoColumns'
+import { Button } from '@/components/Button'
+import Loading from '@/components/Loading'
 
 export default function Zip() {
   const [blobContent, setBlobContent] = useState(null)

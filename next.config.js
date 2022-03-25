@@ -1,3 +1,4 @@
+const path = require('path')
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 const prod = process.env.NODE_ENV === 'production'
@@ -16,7 +17,6 @@ const nextConfig = {
     PKG_VERSION: require('./package.json').version,
   },
   webpack(config, { dev, isServer }) {
-    // Replace React with Preact in client production build
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
         react: 'preact/compat',
@@ -24,8 +24,8 @@ const nextConfig = {
         'react-dom': 'preact/compat',
       })
     }
-
     config.experiments = config.experiments || {}
+    config.resolve.alias['@'] = path.resolve(__dirname, './src')
     Object.assign(config.experiments, {
       asyncWebAssembly: true,
     })

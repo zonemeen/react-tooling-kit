@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Layout } from './Layout'
 import { Column, TwoColumns } from './TwoColumns'
-import Viewer from '../components/Viewer'
+import Viewer from './Viewer'
 
 export default function DiffFiles({
   title,

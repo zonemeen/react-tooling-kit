@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import mammoth from 'mammoth'
-import docxStyle from '../../utils/docxStyle'
+import docxStyle from '@/utils/docxStyle'
 import Iframe from './Iframe'
 
 const Docx = ({ src, style, className }) => {

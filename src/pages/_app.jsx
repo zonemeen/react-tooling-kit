@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import '../styles/main.scss'
-import '../styles/nv.d3.scss'
-import '../styles/pptxjs.scss'
-import '../styles/unsupported.scss'
+import '@/styles/main.scss'
+import '@/styles/nv.d3.scss'
+import '@/styles/pptxjs.scss'
+import '@/styles/unsupported.scss'
 
-import { SWUpdatePopup } from '../components/SWUpdatePopup'
+import { SWUpdatePopup } from '@/components/SWUpdatePopup'
 import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {

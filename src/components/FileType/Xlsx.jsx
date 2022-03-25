@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import XLSX from 'xlsx'
-import { workbookToHtml } from '../../utils/utils'
+import { workbookToHtml } from '@/utils/utils'
 import Iframe from './Iframe'
 
 const Xlsx = ({ src, style, className }) => {

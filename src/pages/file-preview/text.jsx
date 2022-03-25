@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Layout } from '../../components/Layout'
-import { Column, TwoColumns } from '../../components/TwoColumns'
-import Viewer from '../../components/Viewer'
-import { readText } from '../../utils/utils'
+import { Layout } from '@/components/Layout'
+import { Column, TwoColumns } from '@/components/TwoColumns'
+import Viewer from '@/components/Viewer'
+import { readText } from '@/utils/utils'
 
 export default function Text() {
   const [result, setResult] = useState('')

@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Layout } from '../components/Layout'
-import { files } from '../files'
+import { Layout } from '@/components/Layout'
+import { files } from '@/files'
 import React from 'react'
 
 export default function HomePage() {

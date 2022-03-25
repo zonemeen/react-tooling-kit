@@ -10,7 +10,6 @@ import {
   Video,
   Photo,
   Unsupported,
-  Unmatched,
 } from './FileType'
 
 const Viewer = (props) => {

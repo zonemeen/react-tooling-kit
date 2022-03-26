@@ -33,8 +33,8 @@ const nextConfig = {
         outputPath: 'static/files',
       },
     })
-    config.experiments = config.experiments || {}
     config.resolve.alias['@'] = path.resolve(__dirname, './src')
+    config.experiments = config.experiments || {}
     Object.assign(config.experiments, {
       asyncWebAssembly: true,
     })

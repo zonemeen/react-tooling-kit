@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Layout } from '@/components/Layout'
 import { Column, TwoColumns } from '@/components/TwoColumns'
-import { list } from './list'
+import { list } from '@/assets/bookList/list.js'
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 
 export default function Zip() {
   const [editions, setEditions] = useState(null)
   const download = async ({ name }) => {
-    const { default: src } = await import(`./bookList/${name}`)
+    const { default: src } = await import(`@/assets/bookList/${name}`)
     const { data } = await axios.get(src, {
       responseType: 'blob',
     })

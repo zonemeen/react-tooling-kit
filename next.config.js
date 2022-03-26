@@ -28,7 +28,7 @@ const nextConfig = {
       test: /\.(png|woff|woff2|eot|ttf|gif|jpg|ico|svg|pdf)$/,
       loader: 'file-loader',
       options: {
-        name: '[name]_[hash].[ext]',
+        name: '[name].[ext]',
         publicPath: `/_next/static/files`,
         outputPath: 'static/files',
       },

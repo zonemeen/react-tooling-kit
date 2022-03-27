@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { Layout } from '@/components/Layout'
-import { Column, TwoColumns } from '@/components/TwoColumns'
-import { list } from '@/assets/bookList/list.js'
+import clsx from 'clsx'
 import axios from 'axios'
 import { saveAs } from 'file-saver'
+import { Layout } from '@/components/Layout'
+import { Column, TwoColumns } from '@/components/TwoColumns'
+import { bookList } from '@/assets/bookList/bookList.js'
 
 export default function Zip() {
   const [editions, setEditions] = useState(null)
+  const [curIndex, setCurIndex] = useState(null)
   const download = async ({ name }) => {
     const { default: src } = await import(`@/assets/bookList/${name}`)
     const { data } = await axios.get(src, {
@@ -14,19 +16,26 @@ export default function Zip() {
     })
     saveAs(data, name)
   }
+  const handleClick = ({ editions }, index) => {
+    setEditions(editions)
+    setCurIndex(index)
+  }
   return (
     <Layout>
       <TwoColumns>
         <Column title="BookList">
-          <div className="grid md:grid-cols-1 max-w-screen-lg">
-            {list.map((item) => {
+          <div className="grid md:grid-cols-1 gap-4 max-w-screen-lg">
+            {bookList.map((item, index) => {
               return (
                 <div
-                  className="border rounded-lg p-3 font-bold hover:bg-zinc-100 cursor-pointer"
-                  key={item.name}
-                  onClick={() => setEditions(item.editions)}
+                  className={clsx(
+                    `border rounded-lg p-3 font-bold cursor-pointer`,
+                    curIndex === index && `bg-light-blue text-white`
+                  )}
+                  key={item.title}
+                  onClick={() => handleClick(item, index)}
                 >
-                  {item.name}
+                  {item.title}
                 </div>
               )
             })}

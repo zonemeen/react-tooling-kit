@@ -4,7 +4,7 @@ import axios from 'axios'
 import { saveAs } from 'file-saver'
 import { Layout } from '@/components/Layout'
 import { Column, TwoColumns } from '@/components/TwoColumns'
-import { bookList } from '@/assets/bookList/bookList.js'
+import { bookList } from '@/utils/bookList'
 
 export default function Zip() {
   const [editions, setEditions] = useState(null)

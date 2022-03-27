@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Layout } from '@/components/Layout'
-import { files } from '@/files'
+import { tools } from '@/tools'
 import React from 'react'
 
 export default function HomePage() {
@@ -36,10 +36,10 @@ export default function HomePage() {
         </div>
       </div>
       <div>
-        {files.map((file) => (
+        {tools.map((file) => (
           <div key={file.title}>
             <div className="pl-6 text-lg text-zinc-500">{file.title}:</div>
-            <div className="grid md:grid-cols-3 gap-5 p-4 max-w-screen-lg">
+            <div className="grid md:grid-cols-4 gap-5 p-4 max-w-screen-lg">
               {file.path.map((item) => {
                 return (
                   <Link href={item.link} key={item.name}>

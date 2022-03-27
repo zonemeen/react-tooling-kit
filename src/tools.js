@@ -1,4 +1,4 @@
-export const files = [
+export const tools = [
   {
     title: 'File Preview',
     path: [

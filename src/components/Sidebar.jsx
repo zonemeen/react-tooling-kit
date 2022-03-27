@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { useScrollLock } from '../hooks/useScrollLock'
-import { files } from '../files'
+import { tools } from '../tools'
 
 const APP_VERSION = process.env.COMMIT_SHA
   ? `${process.env.PKG_VERSION}-${process.env.COMMIT_SHA.slice(0, 6)}`
@@ -96,7 +96,7 @@ export const Sidebar = () => {
         )}
       >
         <div className="p-3">
-          {files.map((file) => (
+          {tools.map((file) => (
             <div key={file.title}>
               <div className="py-1 text-zinc-500">{file.title}</div>
               {file.path.map((item) => {

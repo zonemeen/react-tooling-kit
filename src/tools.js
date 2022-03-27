@@ -37,6 +37,15 @@ export const tools = [
     ],
   },
   {
+    title: 'Image Tools',
+    path: [
+      {
+        name: 'Image To Base64',
+        link: '/image-tools/image-base64',
+      },
+    ],
+  },
+  {
     title: 'File Zip',
     path: [
       {

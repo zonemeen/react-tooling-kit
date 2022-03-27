@@ -7,10 +7,6 @@
   @apply disabled:cursor-not-allowed;
 }
 
-.code {
-  @apply border rounded-lg p-3 overflow-auto;
-}
-
 .loading-container {
   display: flex;
   align-items: center;

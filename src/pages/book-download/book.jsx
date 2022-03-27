@@ -47,22 +47,24 @@ export default function Zip() {
         </Column>
         <Column title="Download">
           <div>
-            <div className="grid md:grid-cols-3 gap-5">
-              {!isDownloaded &&
-                editions &&
-                editions.map((item) => {
-                  return (
-                    <a
-                      className="text-blue-600 underline cursor-pointer"
-                      key={item.lang}
-                      onClick={() => download(item)}
-                    >
-                      {item.lang}
-                    </a>
-                  )
-                })}
-              {isDownloaded && <Loading />}
-            </div>
+            {!isDownloaded ? (
+              <div className="grid md:grid-cols-3 gap-5">
+                {editions &&
+                  editions.map((item) => {
+                    return (
+                      <a
+                        className="text-blue-600 underline cursor-pointer"
+                        key={item.lang}
+                        onClick={() => download(item)}
+                      >
+                        {item.lang}
+                      </a>
+                    )
+                  })}
+              </div>
+            ) : (
+              <Loading />
+            )}
           </div>
         </Column>
       </TwoColumns>

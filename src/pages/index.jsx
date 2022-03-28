@@ -11,7 +11,7 @@ export default function HomePage() {
           target="_blank"
           rel="noopener nofollow"
           href="https://github.com/zonemeen/react-tooling-kit"
-          className="mb-5 border-2 border-pink-400 text-pink-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-pink-50"
+          className="mb-5 border-2 border-blue-400 text-blue-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-blue-50"
         >
           <span>View this project on GitHub.</span>
         </a>

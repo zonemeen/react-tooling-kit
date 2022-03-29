@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "clsx": "^1.1.1",
+    "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.5",
     "json_typegen_wasm": "^0.7.0",
     "jszip": "^3.7.1",
@@ -21,6 +22,7 @@
     "next-pwa": "^5.4.6",
     "preact": "^10.6.6",
     "prop-types": "^15.7.2",
+    "qrcode.react": "^3.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-medium-image-zoom": "^4.3.5",

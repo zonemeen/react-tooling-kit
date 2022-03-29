@@ -46,11 +46,11 @@ export const tools = [
     ],
   },
   {
-    title: 'File Zip',
+    title: 'Qrcode Tools',
     path: [
       {
-        name: 'Zip',
-        link: '/file-zip/zip',
+        name: 'Qrcode Generator',
+        link: '/qrcode-tools/qrcode-generator',
       },
     ],
   },
@@ -60,6 +60,15 @@ export const tools = [
       {
         name: 'Book Download',
         link: '/book-download/book',
+      },
+    ],
+  },
+  {
+    title: 'File Zip',
+    path: [
+      {
+        name: 'Zip',
+        link: '/file-zip/zip',
       },
     ],
   },

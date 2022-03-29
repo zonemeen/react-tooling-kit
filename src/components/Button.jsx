@@ -71,19 +71,25 @@ export const BackButton = ({ ...props }) => {
   )
 }
 
-export const DownloadButton = ({ fileName }) => {
+export const DownloadButton = ({ fileName, onClick }) => {
   const [downloaded, setDownloaded] = React.useState(false)
   return (
     <Button
-      onClick={async () => {
-        setDownloaded(true)
-        const { default: src } = await import(`@/assets/bookList/${fileName}`)
-        const { data } = await axios.get(src, {
-          responseType: 'blob',
-        })
-        saveAs(data, fileName)
-        setDownloaded(false)
-      }}
+      onClick={
+        onClick
+          ? onClick
+          : async () => {
+              setDownloaded(true)
+              const { default: src } = await import(
+                `@/assets/bookList/${fileName}`
+              )
+              const { data } = await axios.get(src, {
+                responseType: 'blob',
+              })
+              saveAs(data, fileName)
+              setDownloaded(false)
+            }
+      }
       className={downloaded && `text-blue-600 cursor-not-allowed`}
     >
       {downloaded ? (

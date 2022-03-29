@@ -73,7 +73,9 @@ export default function Zip() {
         <Column
           title="Result"
           renderRight={
-            result ? () => <DownloadButton fileName={result.name} /> : undefined
+            result
+              ? () => <DownloadButton fileName={result.name} isLocal={true} />
+              : undefined
           }
         >
           {result && (

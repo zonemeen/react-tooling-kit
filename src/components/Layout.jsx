@@ -6,12 +6,11 @@ import { useRouter } from 'next/router'
 
 export const Layout = ({ children, title }) => {
   const router = useRouter()
-  const file = React.useMemo(
+  const tool = React.useMemo(
     () => tools.find((t) => t.link === router.asPath),
     [router.asPath]
   )
-
-  const documentTitle = title || (file && file.name)
+  const documentTitle = title || (tool && tool.name)
 
   return (
     <>

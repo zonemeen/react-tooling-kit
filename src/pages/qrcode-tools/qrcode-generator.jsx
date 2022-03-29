@@ -11,7 +11,7 @@ export default function QrcodeGenerator() {
   const [error, setError] = React.useState('')
   const [qrcode, setQrcode] = React.useState('')
 
-  const handleInputChange = async (e) => {
+  const onInputChange = async (e) => {
     setInput(e.target.value)
     try {
       setQrcode(e.target.value)
@@ -20,7 +20,7 @@ export default function QrcodeGenerator() {
       console.error(err)
     }
   }
-  const handleClick = async () => {
+  const onDownloadClick = async () => {
     const node = document.getElementById('qrcode')
     if (node) {
       const blob = await domtoimage.toBlob(node, {
@@ -44,13 +44,15 @@ export default function QrcodeGenerator() {
             id="input-el"
             className="w-full input"
             value={input}
-            onChange={handleInputChange}
+            onChange={onInputChange}
           />
         </Column>
         <Column
           title="QR Code"
           renderRight={
-            qrcode ? () => <DownloadButton onClick={handleClick} /> : undefined
+            qrcode
+              ? () => <DownloadButton onClick={onDownloadClick} />
+              : undefined
           }
         >
           {qrcode && (

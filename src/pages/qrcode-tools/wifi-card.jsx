@@ -66,7 +66,7 @@ export default function QrcodeGenerator() {
   return (
     <Layout>
       <TwoColumns>
-        <Column>
+        <Column title="Setting">
           <Input
             title="Network name"
             placeholder="Wifi Network Name"

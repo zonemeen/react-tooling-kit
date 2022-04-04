@@ -46,4 +46,13 @@ export const bookList = [
       },
     ],
   },
+  {
+    title: '图解HTTP',
+    editions: [
+      {
+        lang: 'Chinese',
+        name: '图解HTTP.pdf',
+      },
+    ],
+  },
 ]

@@ -1,6 +1,6 @@
 export const bookList = [
   {
-    title: 'Professional JavaScript for Web Developers(4th Edition)',
+    title: 'JavaScript高级程序设计(第4版)',
     editions: [
       {
         lang: 'English',
@@ -13,7 +13,7 @@ export const bookList = [
     ],
   },
   {
-    title: "You Don't Know JS",
+    title: '你不知道的JavaScript',
     editions: [
       {
         lang: 'English',
@@ -34,7 +34,7 @@ export const bookList = [
     ],
   },
   {
-    title: 'Secrets of the JavaScript Ninja(2th Edition)',
+    title: 'JavaScript忍者秘籍(第二版)',
     editions: [
       {
         lang: 'English',
@@ -52,6 +52,28 @@ export const bookList = [
       {
         lang: 'Chinese',
         name: '图解HTTP.pdf',
+      },
+    ],
+  },
+  {
+    title: '深入浅出Node.js',
+    editions: [
+      {
+        lang: 'Chinese',
+        name: '深入浅出Node.js.pdf',
+      },
+    ],
+  },
+  {
+    title: '重构：改善既有代码的设计(第2版)',
+    editions: [
+      {
+        lang: 'English',
+        name: 'Refactoring Improving the Design of Existing Code(2th Edition).pdf',
+      },
+      {
+        lang: 'Chinese',
+        name: '重构：改善既有代码的设计(第2版).pdf',
       },
     ],
   },

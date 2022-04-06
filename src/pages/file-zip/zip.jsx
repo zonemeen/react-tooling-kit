@@ -4,7 +4,7 @@ import axios from 'axios'
 import { saveAs } from 'file-saver'
 import { Layout } from '@/components/Layout'
 import { Column, TwoColumns } from '@/components/TwoColumns'
-import { Button } from '@/components/Button'
+import { Button, DownloadButton } from '@/components/Button'
 import Loading from '@/components/Loading'
 
 export default function Zip() {
@@ -63,9 +63,9 @@ export default function Zip() {
             {!blobContent && !uploadFiles && <div />}
             {!blobContent && uploadFiles && <Loading />}
             {blobContent && uploadFiles && (
-              <Button onClick={() => saveAs(blobContent, 'Files.zip')}>
-                Download
-              </Button>
+              <DownloadButton
+                onClick={() => saveAs(blobContent, 'Files.zip')}
+              />
             )}
           </div>
         </Column>

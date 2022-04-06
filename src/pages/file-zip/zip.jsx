@@ -10,7 +10,7 @@ import Loading from '@/components/Loading'
 export default function Zip() {
   const [blobContent, setBlobContent] = useState(null)
   const [uploadFiles, setUploadFiles] = useState(null)
-  const handleChange = (e) => {
+  const onFilesInputChange = (e) => {
     setBlobContent(null)
     setUploadFiles(null)
     const zip = new JSZip()
@@ -47,7 +47,7 @@ export default function Zip() {
     <Layout>
       <TwoColumns>
         <Column title="zip">
-          <input type="file" multiple={true} onChange={handleChange} />
+          <input type="file" multiple={true} onChange={onFilesInputChange} />
           {uploadFiles && (
             <div className="pt-2">
               {uploadFiles.map((file) => (

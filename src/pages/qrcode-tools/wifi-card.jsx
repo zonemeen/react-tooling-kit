@@ -6,7 +6,7 @@ import { DownloadButton } from '@/components/Button'
 import { Column, TwoColumns } from '@/components/TwoColumns'
 import { Input, Radio, CheckBox } from '@/components/Input'
 
-export default function QrcodeGenerator() {
+export default function WifiCard() {
   const [qrcode, setQrcode] = React.useState('')
   const [settings, setSettings] = React.useState({
     ssid: '',

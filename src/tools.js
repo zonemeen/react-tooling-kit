@@ -53,8 +53,8 @@ export const tools = [
         link: '/qrcode-tools/qrcode-generator',
       },
       {
-        name: 'Wifi Card',
-        link: '/qrcode-tools/wifi-card',
+        name: 'Wifi Connection Card',
+        link: '/qrcode-tools/wifi-connection-card',
       },
     ],
   },

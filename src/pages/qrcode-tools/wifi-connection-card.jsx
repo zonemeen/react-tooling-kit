@@ -36,7 +36,7 @@ export default function WifiConnectionCard() {
       setErrors({
         ...errors,
         passwordError:
-          'Password must be at least 8 characters, or change the encryption to "None"',
+          'The password of WPA encryption must be at least 8 characters, or change the encryption to "None"',
       })
       return
     }
@@ -44,7 +44,7 @@ export default function WifiConnectionCard() {
       setErrors({
         ...errors,
         passwordError:
-          'Password must be at least 5 characters, or change the encryption to "None"',
+          'The password of WEP encryption must be at least 5 characters, or change the encryption to "None"',
       })
       return
     }
@@ -92,10 +92,15 @@ export default function WifiConnectionCard() {
     setSettings({ ...settings, ssid })
   }
   const onPasswordChange = (password) => {
-    setErrors({
-      ...errors,
-      passwordError: '',
-    })
+    if (
+      (settings.password.length >= 8 && settings.encryptionMode === 'WPA') ||
+      (settings.password.length >= 5 && settings.encryptionMode === 'WEP')
+    ) {
+      setErrors({
+        ...errors,
+        passwordError: '',
+      })
+    }
     setSettings({ ...settings, password })
   }
   const onHiddenSSIDChange = (hiddenSSID) => {

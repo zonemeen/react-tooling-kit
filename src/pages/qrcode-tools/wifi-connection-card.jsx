@@ -5,6 +5,7 @@ import { Layout } from '@/components/Layout'
 import { DownloadButton } from '@/components/Button'
 import { Column, TwoColumns } from '@/components/TwoColumns'
 import { Input, Radio, CheckBox } from '@/components/Input'
+import { ErrorMessage } from '@/components/ErrorMessage'
 
 export default function WifiConnectionCard() {
   const [qrcode, setQrcode] = React.useState('')
@@ -14,20 +15,45 @@ export default function WifiConnectionCard() {
     encryptionMode: 'WPA',
     hiddenSSID: false,
   })
+  const [errors, setErrors] = React.useState({
+    ssidError: '',
+    passwordError: '',
+  })
   const encryptionModes = [
     { label: 'None', value: '' },
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
     { label: 'WEP', value: 'WEP' },
   ]
   const onDownloadClick = async () => {
-    const node = document.getElementById('qrcode')
-    if (node) {
-      const blob = await domtoimage.toBlob(node, {
-        height: node.offsetHeight,
-        width: node.offsetWidth,
+    if (!settings.ssid.length) {
+      setErrors({
+        ...errors,
+        ssidError: 'Network name cannot be empty',
       })
-      saveAs(blob, 'qrcode.png')
+      return
     }
+    if (settings.password.length < 8 && settings.encryptionMode === 'WPA') {
+      setErrors({
+        ...errors,
+        passwordError:
+          'Password must be at least 8 characters, or change the encryption to "None"',
+      })
+      return
+    }
+    if (settings.password.length < 5 && settings.encryptionMode === 'WEP') {
+      setErrors({
+        ...errors,
+        passwordError:
+          'Password must be at least 5 characters, or change the encryption to "None"',
+      })
+      return
+    }
+    const node = document.getElementById('qrcode')
+    const blob = await domtoimage.toBlob(node, {
+      height: node.offsetHeight,
+      width: node.offsetWidth,
+    })
+    saveAs(blob, 'qrcode.png')
   }
   const escape = (v) => {
     const needsEscape = ['"', ';', ',', ':', '\\']
@@ -52,12 +78,24 @@ export default function WifiConnectionCard() {
   }, [settings])
 
   const onEncryptionModeChange = (encryptionMode) => {
+    setErrors({
+      ...errors,
+      passwordError: '',
+    })
     setSettings({ ...settings, encryptionMode })
   }
   const onSSIDChange = (ssid) => {
+    setErrors({
+      ...errors,
+      ssidError: '',
+    })
     setSettings({ ...settings, ssid })
   }
   const onPasswordChange = (password) => {
+    setErrors({
+      ...errors,
+      passwordError: '',
+    })
     setSettings({ ...settings, password })
   }
   const onHiddenSSIDChange = (hiddenSSID) => {
@@ -72,12 +110,16 @@ export default function WifiConnectionCard() {
             placeholder="Wifi Network Name"
             onChange={onSSIDChange}
           />
+          <ErrorMessage className="mb-2" message={errors.ssidError} />
           {settings.encryptionMode && (
-            <Input
-              title="Password"
-              placeholder="Password"
-              onChange={onPasswordChange}
-            />
+            <>
+              <Input
+                title="Password"
+                placeholder="Password"
+                onChange={onPasswordChange}
+              />
+              <ErrorMessage message={errors.passwordError} />
+            </>
           )}
           <CheckBox options={['Hidden SSID']} onChange={onHiddenSSIDChange} />
           <Radio

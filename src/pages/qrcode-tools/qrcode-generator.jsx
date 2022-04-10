@@ -38,7 +38,6 @@ export default function QrcodeGenerator() {
           title="Input"
           renderRight={() => <CopyButton getValue={() => input} />}
         >
-          <ErrorMessage className="mb-2" message={error} />
           <textarea
             rows={10}
             id="input-el"
@@ -46,6 +45,7 @@ export default function QrcodeGenerator() {
             value={input}
             onChange={onInputChange}
           />
+          <ErrorMessage className="mt-2" message={error} />
         </Column>
         <Column
           title="QR Code"

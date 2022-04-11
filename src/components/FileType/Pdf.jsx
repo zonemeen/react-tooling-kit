@@ -9,7 +9,6 @@ const Pdf = ({ src, style, className }) => {
       const { data } = await axios.get(src, {
         responseType: 'blob',
       })
-      console.log('data', data)
       setUrl(URL.createObjectURL(data))
     }
     fetchData()

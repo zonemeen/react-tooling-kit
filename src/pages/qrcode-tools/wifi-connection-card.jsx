@@ -10,13 +10,13 @@ import { ErrorMessage } from '@/components/ErrorMessage'
 export default function WifiConnectionCard() {
   const [qrcode, setQrcode] = React.useState('')
   const [settings, setSettings] = React.useState({
-    ssid: '',
+    networkName: '',
     password: '',
     encryptionMode: 'WPA',
-    hiddenSSID: false,
+    hiddenNetworkName: false,
   })
   const [errors, setErrors] = React.useState({
-    ssidError: '',
+    networkNameError: '',
     passwordError: '',
   })
   const encryptionModes = [
@@ -24,11 +24,12 @@ export default function WifiConnectionCard() {
     { label: 'WPA/WPA2/WPA3', value: 'WPA' },
     { label: 'WEP', value: 'WEP' },
   ]
+
   const onDownloadClick = async () => {
-    if (!settings.ssid.length) {
+    if (!settings.networkName.length) {
       setErrors({
         ...errors,
-        ssidError: 'Network name cannot be empty',
+        networkNameError: 'Network name cannot be empty',
       })
       return
     }
@@ -55,12 +56,12 @@ export default function WifiConnectionCard() {
     })
     saveAs(blob, 'qrcode.png')
   }
-  const escape = (v) => {
-    const needsEscape = ['"', ';', ',', ':', '\\']
 
+  const escape = (v) => {
+    const escapedList = ['"', ';', ',', ':', '\\']
     let escaped = ''
     for (const c of v) {
-      if (needsEscape.includes(c)) {
+      if (escapedList.includes(c)) {
         escaped += `\\${c}`
       } else {
         escaped += c
@@ -70,10 +71,10 @@ export default function WifiConnectionCard() {
   }
 
   useEffect(() => {
-    const ssid = escape(settings.ssid)
+    const networkName = escape(settings.networkName)
     const password = !settings.encryptionMode ? '' : escape(settings.password)
     setQrcode(
-      `WIFI:T:${settings.encryptionMode};S:${ssid};P:${password};H:${settings.hiddenSSID};`
+      `WIFI:T:${settings.encryptionMode};S:${networkName};P:${password};H:${settings.hiddenNetworkName};`
     )
   }, [settings])
 
@@ -84,12 +85,12 @@ export default function WifiConnectionCard() {
     })
     setSettings({ ...settings, encryptionMode })
   }
-  const onSSIDChange = (ssid) => {
+  const onNetworkNameChange = (networkName) => {
     setErrors({
       ...errors,
-      ssidError: '',
+      networkNameError: '',
     })
-    setSettings({ ...settings, ssid })
+    setSettings({ ...settings, networkName })
   }
   const onPasswordChange = (password) => {
     if (
@@ -103,8 +104,8 @@ export default function WifiConnectionCard() {
     }
     setSettings({ ...settings, password })
   }
-  const onHiddenSSIDChange = (hiddenSSID) => {
-    setSettings({ ...settings, hiddenSSID })
+  const onHiddenNetworkNameChange = (hiddenNetworkName) => {
+    setSettings({ ...settings, hiddenNetworkName })
   }
   return (
     <Layout>
@@ -113,9 +114,9 @@ export default function WifiConnectionCard() {
           <Input
             title="Network name"
             placeholder="Wifi Network Name"
-            onChange={onSSIDChange}
+            onChange={onNetworkNameChange}
           />
-          <ErrorMessage className="mb-2" message={errors.ssidError} />
+          <ErrorMessage className="mb-2" message={errors.networkNameError} />
           {settings.encryptionMode && (
             <>
               <Input
@@ -126,7 +127,10 @@ export default function WifiConnectionCard() {
               <ErrorMessage message={errors.passwordError} />
             </>
           )}
-          <CheckBox options={['Hidden SSID']} onChange={onHiddenSSIDChange} />
+          <CheckBox
+            options={['Hidden NetworkName']}
+            onChange={onHiddenNetworkNameChange}
+          />
           <Radio
             title="Encryption"
             defaultValue={settings.encryptionMode}

@@ -8,7 +8,7 @@ export const bookList = [
       },
       {
         lang: 'Chinese',
-        name: 'JavaScript高级程序设计(第4版).pdf',
+        name: 'JavaScript高级程序设计(第四版).pdf',
       },
     ],
   },
@@ -47,6 +47,15 @@ export const bookList = [
     ],
   },
   {
+    title: '算法(第四版)',
+    editions: [
+      {
+        lang: 'Chinese',
+        name: '算法(第四版).pdf',
+      },
+    ],
+  },
+  {
     title: '图解HTTP',
     editions: [
       {
@@ -65,7 +74,7 @@ export const bookList = [
     ],
   },
   {
-    title: '重构：改善既有代码的设计(第2版)',
+    title: '重构：改善既有代码的设计(第二版)',
     editions: [
       {
         lang: 'English',
@@ -73,7 +82,7 @@ export const bookList = [
       },
       {
         lang: 'Chinese',
-        name: '重构：改善既有代码的设计(第2版).pdf',
+        name: '重构：改善既有代码的设计(第二版).pdf',
       },
     ],
   },

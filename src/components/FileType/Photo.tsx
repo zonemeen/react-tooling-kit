@@ -1,0 +1,26 @@
+import React, { useState, useEffect } from 'react'
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+import Loading from '../Loading'
+import { FileViewerProps } from '@/types'
+
+const Photo: React.FC<FileViewerProps> = ({ src, style, className }) => {
+  const [hasImg, setHasImg] = useState(false)
+  useEffect(() => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => {
+      setHasImg(true)
+    }
+  }, [src])
+
+  return hasImg ? (
+    <Zoom>
+      <img src={src} style={style} className={className} alt="" />
+    </Zoom>
+  ) : (
+    <Loading />
+  )
+}
+
+export default Photo

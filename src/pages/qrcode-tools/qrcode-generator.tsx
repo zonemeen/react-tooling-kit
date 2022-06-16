@@ -12,7 +12,7 @@ export default function QrcodeGenerator() {
   const [error, setError] = React.useState('')
   const [qrcode, setQrcode] = React.useState('')
 
-  const onInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value)
     try {
       setQrcode(e.target.value)
@@ -48,7 +48,7 @@ export default function QrcodeGenerator() {
             id="input-el"
             className="w-full input"
             value={input}
-            onChange={() => onInputChange}
+            onChange={(e) => onInputChange(e)}
           />
           <ErrorMessage className="mt-2" message={error} />
         </Column>

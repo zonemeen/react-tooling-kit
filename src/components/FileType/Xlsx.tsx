@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import XLSX from 'xlsx'
-import { workbookToHtml } from '@/utils/utils'
+import { read, utils } from 'xlsx'
 import Iframe from './Iframe'
+import xlsxStyle from '@/utils/xlsxStyle'
 import { FileViewerProps } from '@/types'
 
 const Xlsx: React.FC<FileViewerProps> = ({ src, style, className }) => {
@@ -12,9 +12,10 @@ const Xlsx: React.FC<FileViewerProps> = ({ src, style, className }) => {
       const { data } = await axios.get(src, {
         responseType: 'arraybuffer',
       })
-      const arrData = new Uint8Array(data)
-      const workbook = XLSX.read(arrData, { type: 'array' })
-      setUrl(workbookToHtml(workbook))
+      const workBookData = read(data)
+      const workSheetData = workBookData.Sheets[workBookData.SheetNames[0]]
+      const html = utils.sheet_to_html(workSheetData) + xlsxStyle
+      setUrl(html)
     }
     fetchData()
   }, [src])

@@ -36,15 +36,13 @@ export const useWorker = <TArgs, TResult>(
       const id = randomId()
       await waitPromise
 
-      const result = new Promise<TResult>((resolve) => {
+      return new Promise<TResult>((resolve) => {
         emitter.on(id, (data: any) => {
           emitter.off(id)
           resolve(data)
         })
         worker!.postMessage({ id, args })
       })
-
-      return result
     },
     [worker]
   )
@@ -57,7 +55,7 @@ type Listener = (args: any) => any
 export const initializeWorkerListener = (listener: Listener) => {
   postMessage({ id: 'init' })
 
-  onmessage = async (e: any) => {
+  onmessage = async (e: MessageEvent) => {
     const { id, args } = e.data
 
     const result = await listener(args)

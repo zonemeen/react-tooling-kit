@@ -1,4 +1,4 @@
-import XLSX from 'xlsx'
+import XLSX, { WorkBook } from 'xlsx'
 import xlsxStyle from './xlsxStyle'
 
 const csv2Table = (csv: string) => {
@@ -27,7 +27,7 @@ const csv2Table = (csv: string) => {
   return html
 }
 
-export const workbookToHtml = (workbook: any) => {
+export const workbookToHtml = (workbook: WorkBook) => {
   const sheetNames = workbook.SheetNames
   const worksheet = workbook.Sheets[sheetNames[0]]
   const csv = XLSX.utils.sheet_to_csv(worksheet)

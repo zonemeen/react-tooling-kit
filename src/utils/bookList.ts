@@ -16,6 +16,10 @@ export const bookList = [
     title: 'JavaScript语言精粹与编程实践(第3版)',
     editions: [
       {
+        lang: '整书',
+        name: 'JavaScript语言精粹与编程实践(第三版).pdf',
+      },
+      {
         lang: '上部分(第一章-第三章)',
         name: 'JavaScript语言精粹与编程实践(第三版-第一章-第三章).pdf',
       },

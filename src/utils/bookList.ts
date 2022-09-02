@@ -13,6 +13,19 @@ export const bookList = [
     ],
   },
   {
+    title: 'JavaScript语言精粹与编程实践(第3版)',
+    editions: [
+      {
+        lang: '上部分(第一章-第三章)',
+        name: 'JavaScript语言精粹与编程实践(第三版-第一章-第三章).pdf',
+      },
+      {
+        lang: '下部分(第四章-第七章)',
+        name: 'JavaScript语言精粹与编程实践(第三版-第四章-第七章).pdf',
+      },
+    ],
+  },
+  {
     title: '你不知道的JavaScript',
     editions: [
       {
@@ -52,6 +65,15 @@ export const bookList = [
       {
         lang: 'Chinese',
         name: '算法(第四版).pdf',
+      },
+    ],
+  },
+  {
+    title: 'JavaScript设计模式与开发实践',
+    editions: [
+      {
+        lang: 'Chinese',
+        name: 'JavaScript设计模式与开发实践.pdf',
       },
     ],
   },
